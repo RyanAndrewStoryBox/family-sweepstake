@@ -212,7 +212,7 @@
     <div class="divider"></div>
     <div class="waiting-box">
       <div class="waiting-title">⚽ Waiting for the draw to begin...</div>
-      <p class="waiting-sub">The host will start the live draw shortly</p>
+      <p class="waiting-sub">Echo will start the live draw at 3:00 PM BST · Wednesday 10 June</p>
       <div><span class="pulse"></span><span class="pulse"></span><span class="pulse"></span></div>
     </div>
     <div class="divider"></div>
@@ -310,10 +310,10 @@
 <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
 <script>
 // ── CHANGE THESE for the family sweepstake deployment ─────────────────────────
-const PUSHER_KEY    = 'FAMILY_PUSHER_KEY_HERE';
+const PUSHER_KEY    = '4d65d2cd63b98ecb182a';
 const PUSHER_CLUSTER = 'eu';
-const SUPABASE_URL  = 'FAMILY_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'FAMILY_SUPABASE_ANON_KEY_HERE';
+const SUPABASE_URL  = 'https://ezmwzrhbrsxeshkydfec.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_ThG-Kb7hBgHpVen7hR3dWg_qzaAlISD';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const FLAG = 'https://flagcdn.com/w40/';
@@ -686,7 +686,7 @@ function buildCompletedCards(type,players,playerOrder){
 // ── PUSHER ────────────────────────────────────────────────────────────────────
 let pusher,channel;
 function initPusher(){
-  if(typeof Pusher==='undefined'||PUSHER_KEY==='FAMILY_PUSHER_KEY_HERE'){ console.log('Pusher not configured'); return; }
+  if(typeof Pusher==='undefined'){ console.log('Pusher not configured'); return; }
   try{
     pusher=new Pusher(PUSHER_KEY,{cluster:PUSHER_CLUSTER});
     channel=pusher.subscribe('sweepstake');
